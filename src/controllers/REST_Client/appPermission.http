@@ -1,0 +1,21 @@
+@baseUrl = http://127.0.0.1:3009/system/appPermission
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzdXBlckFkbWluIiwiZW1haWwiOm51bGwsInBob25lIjpudWxsLCJpYXQiOjE2NTQ1MzA0MDEsImV4cCI6MTY1NDYxNjgwMX0.69kaREegPTdD8YzwUX_XbKoffSnBH5tZYp3jRfdDRqQ
+
+###增加权限
+
+POST {{baseUrl}}/addPermission HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "permissionName": "sample",
+    "permissionKey": "113",
+    "pid": 4
+}
+
+###获取权限树
+
+GET {{baseUrl}}/getPermissionTree HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
